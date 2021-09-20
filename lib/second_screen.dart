@@ -20,6 +20,8 @@ class _SecondScreenState extends State<SecondScreen> {
   ];
 
   Widget _buildIcon(int index) {
+    final imageUrl =
+        "https://media-exp1.licdn.com/dms/image/C4D03AQFE1-QrkzGsYA/profile-displayphoto-shrink_200_200/0/1612335100985?e=1633564800&v=beta&t=34P3Auww87DvTg2Bsq61wgN_y5Ga-VCnsWYNlqHEfDQ";
     return GestureDetector(
       onTap: () {
         setState(() {

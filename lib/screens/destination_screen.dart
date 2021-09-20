@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tourist_buddy/maps_utils.dart';
 import 'package:tourist_buddy/models/activity_model.dart';
 import 'package:tourist_buddy/models/destination_model.dart';
 
@@ -48,6 +49,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     child: Image(
                       image: AssetImage(widget.destination.imageUrl),
                       fit: BoxFit.cover,
+                      height: 200.0,
                     ),
                   ),
                 ),
@@ -73,7 +75,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                         IconButton(
                           onPressed: () => Navigator.pop(context),
-                          icon: Icon(FontAwesomeIcons.sortAmountDown),
+                          icon: Icon(FontAwesomeIcons.heart),
                           iconSize: 25.0,
                           color: Colors.black,
                         ),
@@ -98,10 +100,16 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                     Row(
                       children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.locationArrow,
-                          size: 15.0,
-                          color: Colors.white70,
+                        TextButton(
+                          onPressed: () {
+                            MapUtils.openMap(widget.destination.latitude,
+                                widget.destination.longitutde);
+                          },
+                          child: Icon(
+                            FontAwesomeIcons.locationArrow,
+                            size: 15.0,
+                            color: Colors.white70,
+                          ),
                         ),
                         SizedBox(width: 5.0),
                         Text(
@@ -130,7 +138,6 @@ class _DestinationScreenState extends State<DestinationScreen> {
               itemCount: widget.destination.activities.length,
               itemBuilder: (BuildContext context, int index) {
                 Activity activity = widget.destination.activities[index];
-                //Activity activity1 = widget.destination.mumbai[index];
                 return Stack(
                   children: [
                     Container(
@@ -165,35 +172,21 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ],
                             ),
-                            _buildRatingStars(activity.rating),
                             SizedBox(height: 10.0),
-                            Row(
+                            Column(
                               children: [
-                                Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                      color: Theme.of(context).accentColor,
-                                      borderRadius:
-                                          BorderRadius.circular(10.0)),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    activity.startTimes[0],
+                                SizedBox(width: 10.0),
+                                TextButton(
+                                  onPressed: () {
+                                    MapUtils.openMap(
+                                        activity.latitude, activity.longitutde);
+                                  },
+                                  child: Icon(
+                                    FontAwesomeIcons.locationArrow,
+                                    size: 15.0,
+                                    color: Colors.black,
                                   ),
                                 ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                  padding: EdgeInsets.all(5.0),
-                                  width: 70.0,
-                                  decoration: BoxDecoration(
-                                      color: Theme.of(context).accentColor,
-                                      borderRadius:
-                                          BorderRadius.circular(10.0)),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    activity.startTimes[1],
-                                  ),
-                                )
                               ],
                             )
                           ],

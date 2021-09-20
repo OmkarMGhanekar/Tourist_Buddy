@@ -6,10 +6,14 @@ class Destination {
   String country;
   String description;
   List<Activity> activities;
+  double latitude;
+  double longitutde;
 
   Destination({
     required this.imageUrl,
     required this.city,
+    required this.latitude,
+    required this.longitutde,
     required this.country,
     required this.description,
     required this.activities,
@@ -20,50 +24,61 @@ List<Activity> mumbai = [
   Activity(
     imageUrl: 'assets/images/marine.png',
     name: 'Marine Drive',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
   Activity(
     imageUrl: 'assets/images/csmt.jpg',
     name: 'CSMT',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
+    latitude: 18.9398,
+    longitutde: 72.8354,
   ),
-  
+  Activity(
+    imageUrl: 'assets/images/ColabaCauseway.jpg',
+    name: 'Colaba Causeway',
+    latitude: 18.9227,
+    longitutde: 72.8317,
+  ),
+  Activity(
+    imageUrl: 'assets/images/booth.jpg',
+    name: '',
+    
+    latitude: 18.9569,
+    longitutde: 72.8146698,
+  ),
 ];
 List<Activity> pune = [
   Activity(
     imageUrl: 'assets/images/marine.png',
     name: 'Marine Drive',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
   Activity(
     imageUrl: 'assets/images/csmt.jpg',
     name: 'CSMT',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
-  
 ];
 List<Activity> activities = [
   Activity(
     imageUrl: 'assets/images/stmarksbasilica.jpg',
     name: 'St. Mark\'s Basilica',
-    startTimes: ['9:00 am', '11:00 am'],
-    rating: 5,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
   Activity(
     imageUrl: 'assets/images/gondola.jpg',
     name: 'Walking Tour and Gonadola Ride',
-    startTimes: ['11:00 pm', '1:00 pm'],
-    rating: 4,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
   Activity(
     imageUrl: 'assets/images/murano.jpg',
     name: 'Murano and Burano Tour',
-    startTimes: ['12:30 pm', '2:00 pm'],
-    rating: 3,
+    latitude: 18.951832,
+    longitutde: 72.8146698,
   ),
 ];
 
@@ -74,6 +89,8 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: mumbai,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
   Destination(
     imageUrl: 'assets/images/pune.jpg',
@@ -81,6 +98,8 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: pune,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
   Destination(
     imageUrl: 'assets/images/ghota_ghat_nasik.jpg',
@@ -88,6 +107,8 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: activities,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
   Destination(
     imageUrl: 'assets/images/aurangabad.jpg',
@@ -95,6 +116,8 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: activities,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
   Destination(
     imageUrl: 'assets/images/nagpur.jpg',
@@ -102,6 +125,8 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: activities,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
   Destination(
     imageUrl: 'assets/images/kolhapur.jpg',
@@ -109,5 +134,7 @@ List<Destination> destinations = [
     country: 'India',
     description: 'Visit Mumbai you will love it',
     activities: activities,
+    latitude: 18.949170,
+    longitutde: 72.819205,
   ),
 ];
